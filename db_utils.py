@@ -33,7 +33,7 @@ class RDSDatabaseConnector:
   def extract_data_to_df(self, table_name):
 
     if not self.engine:
-      raise Exception("Engine is not initialized. Call initialize_engine first.")
+      raise Exception("Engine is not initialized.")
     try:
       query = f"SELECT * FROM {table_name}"
       df = pd.read_sql(query, self.engine)
@@ -49,6 +49,8 @@ class RDSDatabaseConnector:
       print(f"DataFrame saved to {file_path}")
     except Exception as e:
       print(f"Error saving DataFrame to CSV: {e}")
+
+
 
 if __name__ == "__main__":
 
