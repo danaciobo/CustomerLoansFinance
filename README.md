@@ -1,17 +1,24 @@
 # Customer Loans Finance
 
-# Financial Loan Data Transformation
+## Financial Loan Data Transformation & Loss Analysis
 
-This project involves transforming and cleaning a customer loan dataset to prepare it for analysis. The goal is to handle missing data, remove highly correlated features, detect and correct skewed distributions, and remove outliers. The project also includes visualizations of key transformations to monitor the progress.
 
-## Features
+This project involves transforming and analyzing a customer loan data set to assess financial risk. It focuses on cleaning the data, handling missing values, and detecting outliers and highly correlated features. The current state of loans is evaluated to visualize projected payments over time. The analysis includes calculating the loss from charged-off loans, projecting potential losses from loans at risk, and identifying indicators that may predict default.
 
-- **Data Cleaning**: Handles missing values, cleans date columns, and converts categorical data to appropriate types.
-- **Handling Missing Values**: Imputes missing data using both domain-specific calculations and general imputation techniques.
-- **Outlier Detection & Removal**: Detects and removes outliers based on a threshold.
-- **Skewed Data Handling**: Identifies skewed columns and transforms them to make data more normally distributed.
-- **Correlation Matrix**: Visualizes correlations and removes highly correlated columns based on a specified threshold.
-- **Data Saving**: Saves the transformed dataset to CSV files.
+
+## Data Transformation & Preprocessing
+
+- **Data Cleaning**: handles missing values, cleans date columns, and converts categorical data to appropriate types.
+- **Handling Missing Values**: fills missing data using both domain-specific calculations and general imputation techniques.
+- **Outlier Detection & Removal**: detects and removes outliers based on a threshold.
+- **Skewed Data Handling**: identifies skewed columns and transforms them to make data more normally distributed.
+- **Correlation Matrix**: visualizes correlations and removes highly correlated columns based on a specified threshold.
+
+## Loss Analysis
+
+- **Current State of the Loans**: calculates the percentage of loans recovered compared to the total amount due, including interest, and estimates how much will be paid back in the next 6 months.
+- **Calculating Loss, Projected and Possible Loss**: Calculates the percentage of charged-off loans and the total amount paid before being charged off. It also estimates the potential loss for customers behind on payments and projects the loss if these loans continue until the end of the term.
+- **Indicators of Loss**: Identifies columns like loan grade, employment length, purpose of loan, and home ownership that may indicate default risk. Customers behind on payments are compared to charged-off customers to identify if loans are at risk.
 
 ## File Structure:
 
@@ -21,18 +28,11 @@ This project involves transforming and cleaning a customer loan dataset to prepa
   - `data_frame_info.py`: Helps summarize and describe the dataset, with utility functions to explore it.
   - `plotter.py`: Contains functions for visualizing the data at various stages of transformation.
   - `table_data.py`: Loads the dataset from CSV files and manages basic data operations.
-
-- **Jupyter Notebook**
- - `data_transformation.ipynb`: A Jupyter notebook for running the data transformations and analysis.
-
-- **Output Files**:
-  - `processed_loan_data.csv`: The final cleaned and transformed dataset (optional).
-  - `financial_loan_data.csv`: Intermediate file containing the data during transformations (optional).
-
-- **Other Files**:
-  - `README.md`: Contains the documentation for the project.
-  - `requirements.txt`: Lists all necessary dependencies (e.g., pandas, numpy, matplotlib).
-
+  - `data_transformation.ipynb`: A Jupyter notebook for running the data transformations and analysis.
+  - `data_analysis_current_state.ipynb`: Jupyter notebook analyzing the current state of the loan data.
+  - `data_analysis_charged_off.ipynb`: Jupyter notebook analyzing the impact of charged-off loans.
+  - `data_analysis_late_loans.ipynb`: Jupyter notebook analyzing loans that are behind on payments.
+  - `data_analysis_indicators_loss.ipynb`: Jupyter notebook that calculates and projects loss and revenue indicators.
 
 
 ## Prerequisites
